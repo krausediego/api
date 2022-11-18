@@ -5,9 +5,7 @@ export interface CreateUser {
 }
 
 export namespace CreateUser {
-  export type Params = {
-    user: User;
-  };
+  export type Params = Omit<User, 'id'>;
 
   export type Response = {
     message: string;
