@@ -13,6 +13,6 @@ export class BcryptHash implements Hash {
   }
 
   private async generateSalt(): Promise<string> {
-    return bcrypt.genSalt();
+    return bcrypt.genSalt(20);
   }
 }
