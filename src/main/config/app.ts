@@ -2,6 +2,8 @@ import express from 'express';
 import path from 'path';
 import env from '@/main/config/environments/application';
 import { readdirSync } from 'fs';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerDocument } from './swagger';
 
 export class App {
   public readonly app: express.Express;
@@ -37,6 +39,7 @@ export class App {
     const router = express.Router();
     this.app.get('/', (_, res) => res.status(200).send('ok'));
     router.get('/', (_, res) => res.status(200).send('ok'));
+    this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     this.app.use('/api', router);
     const routesPath = path.resolve(__dirname, '../routes');
