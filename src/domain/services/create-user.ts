@@ -1,7 +1,10 @@
-import { CreateUser, Hash } from '@/domain/interfaces';
+import { CreateUser, Hash, ICreateUser } from '@/domain/interfaces';
 
 export class CreateUserService implements CreateUser {
-  constructor(private readonly hash: Hash) {}
+  constructor(
+    private readonly hash: Hash,
+    private readonly createUser: ICreateUser,
+  ) {}
 
   async run(params: CreateUser.Params): Promise<CreateUser.Response> {
     try {
@@ -20,6 +23,16 @@ export class CreateUserService implements CreateUser {
       }
 
       const passwordHashed = await this.hash.createHash(password);
-    } catch (error: any) {}
+
+      await this.createUser.createNewUser({
+        email,
+        username,
+        password: passwordHashed,
+      });
+
+      return { message: 'Usuario criado com sucesso' };
+    } catch (error: any) {
+      throw new error(error);
+    }
   }
 }
