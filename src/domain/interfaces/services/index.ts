@@ -1,2 +1,2 @@
 export * from './create-customer';
-export * from './create-user';
+export * from './sign-up';

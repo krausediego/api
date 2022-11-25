@@ -1,12 +1,9 @@
-import { CreateUser, Hash, ICreateUser } from '@/domain/interfaces';
+import { SignUp, Hash, ISignUp } from '@/domain/interfaces';
 
-export class CreateUserService implements CreateUser {
-  constructor(
-    private readonly hash: Hash,
-    private readonly createUser: ICreateUser,
-  ) {}
+export class SignUpService implements SignUp {
+  constructor(private readonly hash: Hash, private readonly signUp: ISignUp) {}
 
-  async run(params: CreateUser.Params): Promise<CreateUser.Response> {
+  async run(params: SignUp.Params): Promise<SignUp.Response> {
     const { email, password, username } = params;
 
     if (!email) {
@@ -23,7 +20,7 @@ export class CreateUserService implements CreateUser {
 
     const passwordHashed = await this.hash.createHash(password);
 
-    await this.createUser.createNewUser({
+    await this.signUp.createNewUser({
       email,
       username,
       password: passwordHashed,
