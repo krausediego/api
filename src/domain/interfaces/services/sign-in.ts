@@ -11,6 +11,6 @@ export namespace SignIn {
   };
 
   export type Response = {
-    message: string;
+    token: string;
   };
 }
