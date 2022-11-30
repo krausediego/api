@@ -7,7 +7,7 @@ export class Token implements IToken {
   constructor() {}
 
   public generateToken(user: Omit<User, 'password'>): string {
-    return jwt.sign(user, secret.secret as string, { expiresIn: '24h' });
+    return jwt.sign(user, secret.secret as string, { expiresIn: '30s' });
   }
 
   public verifyToken(token: string): string | JwtPayload {
