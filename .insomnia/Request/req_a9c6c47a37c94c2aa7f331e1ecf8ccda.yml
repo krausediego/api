@@ -1,0 +1,30 @@
+_id: req_a9c6c47a37c94c2aa7f331e1ecf8ccda
+type: Request
+parentId: fld_742fb9e8978a4bc6bd81757947a69ebe
+modified: 1669466522999
+created: 1668645430102
+url: "{{ _.baseUrl }}{{ _.prefix }}/create-user"
+name: SignUp
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "diego.krause@gmail.com",
+    	"password": "diego01",
+    	"username": "krausediego"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1668645430102
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

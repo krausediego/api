@@ -1,0 +1,30 @@
+_id: req_3698a7216b784c89ba67da5928cd71fd
+type: Request
+parentId: fld_742fb9e8978a4bc6bd81757947a69ebe
+modified: 1669598542051
+created: 1669466648072
+url: "{{ _.baseUrl }}{{ _.prefix }}/sign_in"
+name: SignIn
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"emailOrUsername": "krausediego",
+    	"password": "diego01"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1bcc91adec60474ab00ba95aadce2c2a
+authentication: {}
+metaSortKey: -1669466648072
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
