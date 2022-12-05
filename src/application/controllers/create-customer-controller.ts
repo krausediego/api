@@ -10,6 +10,7 @@ export class CreateCustomerController implements Controller {
     data,
   }: Http.Request<CreateCustomer.Params>): Promise<Http.Response> {
     try {
+      console.log(data);
       const message = await this.createCustomerService().run(data);
 
       return ok({ ...message });

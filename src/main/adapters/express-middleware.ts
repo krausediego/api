@@ -11,6 +11,7 @@ export const adaptMiddleware = (middleware: Middleware) => {
     const data = {
       accessToken: req.headers?.['x-access-token'],
       ...(req.headers ?? {}),
+      body: req?.body ?? {},
     };
 
     const httpResponse = await middleware.handle({

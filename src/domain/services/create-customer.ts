@@ -1,9 +1,11 @@
-import { CreateCustomer } from '@/domain/interfaces';
+import { CreateCustomer, ICreateCustomer } from '@/domain/interfaces';
 
 export class CreateCustomerService implements CreateCustomer {
-  constructor() {}
+  constructor(private readonly createCustomer: ICreateCustomer) {}
 
   async run(params: CreateCustomer.Params): Promise<CreateCustomer.Response> {
-    return { message: 'Test' };
+    await this.createCustomer.createNewCustomer(params);
+
+    return { message: 'Cliente criado com sucesso.' };
   }
 }

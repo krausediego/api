@@ -5,9 +5,7 @@ export interface CreateCustomer {
 }
 
 export namespace CreateCustomer {
-  export type Params = {
-    customer: Customer;
-  };
+  export type Params = Omit<Customer, 'id'>;
 
   export type Response = {
     message: string;

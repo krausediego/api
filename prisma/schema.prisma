@@ -16,10 +16,34 @@ model User {
   email    String     @unique
   password String
   Customer Customer[]
+  Address  Address[]
 }
 
 model Customer {
-  id      Int    @id @default(autoincrement())
-  user    User   @relation(fields: [user_id], references: [id])
-  user_id String
+  id                 String    @id @default(uuid())
+  user               User      @relation(fields: [user_id], references: [id])
+  user_id            String
+  address            Address   @relation(fields: [address_id], references: [id])
+  address_id         String
+  name               String
+  email              String?
+  phone              String
+  birth_date         DateTime?
+  genre              String?
+  cpf                String?
+  cnpj               String?
+  inscricao_estadual String?
+}
+
+model Address {
+  id        String     @id @default(uuid())
+  user      User       @relation(fields: [user_id], references: [id])
+  user_id   String
+  address   String
+  district  String
+  uf        String
+  city      String
+  number    Int?
+  reference String?
+  Customer  Customer[]
 }

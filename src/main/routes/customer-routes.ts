@@ -1,12 +1,16 @@
 import { Router } from 'express';
-import { adaptRoute } from '@/main/adapters';
-import { makeCreateCustomerController } from '../factories/application';
+import { adaptMiddleware, adaptRoute } from '@/main/adapters';
+import {
+  makeCreateCustomerController,
+  makeCreateCustomerValidator,
+} from '../factories/application';
 import { authToken } from '../middlewares';
 
 export default (router: Router): void => {
   router.post(
-    '/customer',
+    '/create-customer',
     authToken,
+    adaptMiddleware(makeCreateCustomerValidator()),
     adaptRoute(makeCreateCustomerController()),
   );
 };
