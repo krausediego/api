@@ -5,6 +5,8 @@ import {
   makeCreateCustomerValidator,
   makeGetAllCustomersController,
   makeGetAllCustomersValidator,
+  makeUpdateCustomerController,
+  makeUpdateCustomerValidator,
 } from '../factories/application';
 import { authToken } from '../middlewares';
 
@@ -21,5 +23,12 @@ export default (router: Router): void => {
     authToken,
     adaptMiddleware(makeGetAllCustomersValidator()),
     adaptRoute(makeGetAllCustomersController()),
+  );
+
+  router.put(
+    '/update-customer',
+    authToken,
+    adaptMiddleware(makeUpdateCustomerValidator()),
+    adaptRoute(makeUpdateCustomerController()),
   );
 };

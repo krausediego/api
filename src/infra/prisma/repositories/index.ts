@@ -4,3 +4,4 @@ export * from './find-user';
 // Customers
 export * from './create-customer';
 export * from './get-all-customers';
+export * from './update-customer';
