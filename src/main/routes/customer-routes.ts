@@ -3,6 +3,8 @@ import { adaptMiddleware, adaptRoute } from '@/main/adapters';
 import {
   makeCreateCustomerController,
   makeCreateCustomerValidator,
+  makeGetAllCustomersController,
+  makeGetAllCustomersValidator,
 } from '../factories/application';
 import { authToken } from '../middlewares';
 
@@ -12,5 +14,12 @@ export default (router: Router): void => {
     authToken,
     adaptMiddleware(makeCreateCustomerValidator()),
     adaptRoute(makeCreateCustomerController()),
+  );
+
+  router.get(
+    '/get-all-customers',
+    authToken,
+    adaptMiddleware(makeGetAllCustomersValidator()),
+    adaptRoute(makeGetAllCustomersController()),
   );
 };

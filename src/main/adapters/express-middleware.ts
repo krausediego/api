@@ -12,6 +12,7 @@ export const adaptMiddleware = (middleware: Middleware) => {
       accessToken: req.headers?.['x-access-token'],
       ...(req.headers ?? {}),
       body: req?.body ?? {},
+      query: req?.query ?? {},
     };
 
     const httpResponse = await middleware.handle({
