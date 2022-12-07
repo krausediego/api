@@ -8,3 +8,4 @@ export * from './update-customer-validator';
 // Address
 export * from './create-address-validator';
 export * from './get-all-address-validator';
+export * from './update-address-validator';

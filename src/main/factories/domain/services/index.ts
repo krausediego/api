@@ -9,3 +9,4 @@ export * from './update-customer-service-factory';
 // Address
 export * from './create-address-service-factory';
 export * from './get-all-address-service-factory';
+export * from './update-address-service-factory';

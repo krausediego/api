@@ -5,6 +5,8 @@ import {
   makeCreateAddressValidator,
   makeGetAllAddressController,
   makeGetAllAddressValidator,
+  makeUpdateAddressController,
+  makeUpdateAddressValidator,
 } from '@/main/factories/application';
 import { authToken } from '../middlewares';
 
@@ -21,5 +23,12 @@ export default (router: Router): void => {
     authToken,
     adaptMiddleware(makeGetAllAddressValidator()),
     adaptRoute(makeGetAllAddressController()),
+  );
+
+  router.put(
+    '/update-address',
+    authToken,
+    adaptMiddleware(makeUpdateAddressValidator()),
+    adaptRoute(makeUpdateAddressController()),
   );
 };
