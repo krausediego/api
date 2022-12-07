@@ -5,3 +5,7 @@ export * from './find-user-repository-factory';
 export * from './create-customer-repository-factory';
 export * from './get-all-customers-repository-factory';
 export * from './update-customer-repository-factory';
+
+// Address
+export * from './create-address-repository-factory';
+export * from './get-all-address-repository-factory';

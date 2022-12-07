@@ -5,3 +5,7 @@ export * from './sign-in-service-factory';
 export * from './create-customer-service-factory';
 export * from './get-all-customers-service-factory';
 export * from './update-customer-service-factory';
+
+// Address
+export * from './create-address-service-factory';
+export * from './get-all-address-service-factory';
