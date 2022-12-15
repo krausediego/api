@@ -10,6 +10,6 @@ export class GetAllCustomersService implements GetAllCustomers {
     const customers = await this.getAllCustomersRepository.findAllCustomers({
       user_id,
     });
-    return { ...customers };
+    return customers;
   }
 }

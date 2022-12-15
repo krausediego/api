@@ -12,7 +12,7 @@ export class GetAllCustomersController implements Controller {
     try {
       const customers = await this.getAllCustomersService().run(request.data);
 
-      return ok({ ...customers });
+      return ok(customers);
     } catch (error: any) {
       return getHttpError(error);
     }

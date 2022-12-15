@@ -19,13 +19,13 @@ export class SignInService implements SignIn {
     });
 
     if (isNull(user)) {
-      throw new Error('Email/username ou senha incorretos');
+      throw new Error('Nome de usuário / Email ou senha incorretos');
     }
 
     const passwordMatch = await this.hash.compareHash(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error('Email/username ou senha incorretos!!!!');
+      throw new Error('Nome de usuário / Email ou senha incorretos');
     }
 
     const token = this.token.generateToken({

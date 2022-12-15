@@ -8,6 +8,7 @@ export const adaptMiddleware = (middleware: Middleware) => {
     res: Response,
     next: NextFunction,
   ): Promise<void> => {
+    console.log(req.headers);
     const data = {
       accessToken: req.headers?.['x-access-token'],
       ...(req.headers ?? {}),

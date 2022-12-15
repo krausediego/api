@@ -6,11 +6,13 @@ export class AuthTokenMiddleware implements Middleware {
   constructor(private readonly token: Token) {}
 
   public async handle(params: Http.Request<any>): Promise<Http.Response> {
+    // console.log(params.data);
     try {
       await this.token.verifyToken(params.data.accessToken);
 
       return noContent();
     } catch (error: any) {
+      error.statusCode = 401;
       return getHttpError(error);
     }
   }

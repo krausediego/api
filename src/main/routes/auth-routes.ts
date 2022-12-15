@@ -6,7 +6,7 @@ import {
 } from '../factories/application';
 
 export default (router: Router): void => {
-  router.post('/sign_up', adaptRoute(makeSignUpController()));
+  router.post('/sign-up', adaptRoute(makeSignUpController()));
 
-  router.post('/sign_in', adaptRoute(makeSignInController()));
+  router.post('/sign-in', adaptRoute(makeSignInController()));
 };

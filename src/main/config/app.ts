@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import path from 'path';
 import env from '@/main/config/environments/application';
 import { readdirSync } from 'fs';
@@ -18,6 +19,7 @@ export class App {
 
   setupEnvironment(): App {
     this.app.use(express.json());
+    this.app.use(cors());
     return this;
   }
 

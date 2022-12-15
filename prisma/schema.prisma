@@ -11,12 +11,14 @@ datasource db {
 }
 
 model User {
-  id       String     @id @default(uuid())
-  username String     @unique
-  email    String     @unique
-  password String
-  Customer Customer[]
-  Address  Address[]
+  id         String     @id @default(uuid())
+  username   String     @unique
+  email      String     @unique
+  password   String
+  Customer   Customer[]
+  Address    Address[]
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
 }
 
 model Customer {
@@ -33,17 +35,21 @@ model Customer {
   cpf                String?
   cnpj               String?
   inscricao_estadual String?
+  created_at         DateTime  @default(now())
+  updated_at         DateTime  @updatedAt
 }
 
 model Address {
-  id        String     @id @default(uuid())
-  user      User       @relation(fields: [user_id], references: [id])
-  user_id   String
-  address   String
-  district  String
-  uf        String
-  city      String
-  number    Int?
-  reference String?
-  Customer  Customer[]
+  id         String     @id @default(uuid())
+  user       User       @relation(fields: [user_id], references: [id])
+  user_id    String
+  address    String
+  district   String
+  uf         String
+  city       String
+  number     Int?
+  reference  String?
+  Customer   Customer[]
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
 }
