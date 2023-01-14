@@ -9,7 +9,6 @@ export class CreateCustomer implements ICreateCustomer {
     customer: Omit<Customer, 'id'>,
   ): Promise<void> {
     try {
-      console.log(customer);
       await Prisma.customer.create({ data: customer });
     } catch (error: any) {
       throw new Error(error.message);

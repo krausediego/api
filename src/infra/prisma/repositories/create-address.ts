@@ -5,9 +5,11 @@ import { Prisma } from '../prisma';
 export class CreateAddress implements ICreateAddress {
   constructor() {}
 
-  public async createNewAddress(customer: Omit<Address, 'id'>): Promise<void> {
+  public async createNewAddress(
+    address: Omit<Address, 'id'>,
+  ): Promise<Address> {
     try {
-      await Prisma.address.create({ data: customer });
+      return await Prisma.address.create({ data: address });
     } catch (error: any) {
       throw new Error(error);
     }

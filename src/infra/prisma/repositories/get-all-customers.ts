@@ -7,12 +7,22 @@ export class GetAllCustomers implements IGetAllCustomers {
 
   public async findAllCustomers({
     user_id,
+    search,
   }: IGetAllCustomers.Params): Promise<Customer[]> {
     try {
       return await Prisma.customer.findMany({
         where: {
           user_id,
+          AND: [
+            {
+              OR: [
+                { email: { contains: search, mode: 'insensitive' } },
+                { name: { contains: search, mode: 'insensitive' } },
+              ],
+            },
+          ],
         },
+        orderBy: { name: 'asc' },
       });
     } catch (error: any) {
       throw new Error(error);

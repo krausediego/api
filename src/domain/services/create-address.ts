@@ -6,8 +6,7 @@ export class CreateAddressService implements CreateAddress {
   public async run(
     params: CreateAddress.Params,
   ): Promise<CreateAddress.Response> {
-    await this.createAddress.createNewAddress(params);
-
-    return { message: 'ok' };
+    const address = await this.createAddress.createNewAddress(params);
+    return address;
   }
 }

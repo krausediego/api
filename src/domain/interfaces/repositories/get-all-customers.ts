@@ -7,5 +7,6 @@ export interface IGetAllCustomers {
 export namespace IGetAllCustomers {
   export type Params = {
     user_id: string;
+    search?: string;
   };
 }

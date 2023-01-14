@@ -13,7 +13,7 @@ import { authToken } from '../middlewares';
 export default (router: Router): void => {
   router.post(
     '/create-customer',
-    authToken,
+    // authToken,
     adaptMiddleware(makeCreateCustomerValidator()),
     adaptRoute(makeCreateCustomerController()),
   );

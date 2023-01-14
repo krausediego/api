@@ -9,7 +9,6 @@ export class SignUpRopository implements ISignUp {
     try {
       await Prisma.user.create({ data: user });
     } catch (error: any) {
-      console.log(error);
       if (error instanceof PrismaError.PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
           throw new Error('Algum dos campos ja esta em uso');

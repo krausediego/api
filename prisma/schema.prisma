@@ -28,6 +28,7 @@ model Customer {
   address            Address   @relation(fields: [address_id], references: [id])
   address_id         String
   name               String
+  status             Boolean
   email              String?
   phone              String
   birth_date         DateTime?
@@ -35,6 +36,7 @@ model Customer {
   cpf                String?
   cnpj               String?
   inscricao_estadual String?
+  razao_social       String?
   created_at         DateTime  @default(now())
   updated_at         DateTime  @updatedAt
 }
@@ -46,6 +48,7 @@ model Address {
   address    String
   district   String
   uf         String
+  cep        String?
   city       String
   number     Int?
   reference  String?

@@ -13,7 +13,7 @@ import { authToken } from '../middlewares';
 export default (router: Router): void => {
   router.post(
     '/create-address',
-    authToken,
+    // authToken,
     adaptMiddleware(makeCreateAddressValidator()),
     adaptRoute(makeCreateAddressController()),
   );

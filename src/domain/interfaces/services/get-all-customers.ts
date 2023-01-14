@@ -7,6 +7,7 @@ export interface GetAllCustomers {
 export namespace GetAllCustomers {
   export type Params = {
     user_id: string;
+    search?: string;
   };
 
   export type Response = Customer[];
