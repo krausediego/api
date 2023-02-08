@@ -22,6 +22,7 @@ export class GetAllCustomers implements IGetAllCustomers {
             },
           ],
         },
+        include: { address: true },
         orderBy: { name: 'asc' },
       });
     } catch (error: any) {
