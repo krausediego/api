@@ -17,11 +17,11 @@ export class UpdateCustomerValidator implements Middleware {
         name: yup.string(),
         email: yup.string().email(this.validEmail),
         phone: yup.string(),
-        birth_date: yup.string(),
-        genre: yup.string(),
-        cpf: yup.string(),
-        cnpj: yup.string(),
-        inscricao_estadual: yup.string(),
+        birth_date: yup.date().nullable(),
+        genre: yup.string().nullable(),
+        cpf: yup.string().nullable(),
+        cnpj: yup.string().nullable(),
+        inscricao_estadual: yup.string().nullable(),
       });
 
       await schema.validate(request.data.body);
