@@ -1,10 +1,9 @@
 import { ICreateAddress } from '@/domain/interfaces';
 import { Address } from '@prisma/client';
+
 import { Prisma } from '../prisma';
 
 export class CreateAddress implements ICreateAddress {
-  constructor() {}
-
   public async createNewAddress(
     address: Omit<Address, 'id'>,
   ): Promise<Address> {

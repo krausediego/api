@@ -1,5 +1,7 @@
 import { Router } from 'express';
+
 import { adaptRoute } from '@/main/adapters';
+
 import {
   makeSignInController,
   makeSignUpController,

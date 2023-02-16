@@ -1,11 +1,10 @@
-import { Http, Middleware } from '../interfaces';
 import * as yup from 'yup';
+
 import { getHttpError, noContent } from '../helpers';
+import { Http, Middleware } from '../interfaces';
 
 export class UpdateAddressValidator implements Middleware {
   private readonly required = 'Campos obrigatórios faltando.';
-
-  constructor() {}
 
   public async handle(request: Http.Request<any>): Promise<Http.Response> {
     try {

@@ -1,5 +1,5 @@
-import { Controller, Http } from '@/application/interfaces';
 import { getHttpError, ok } from '@/application/helpers';
+import { Controller, Http } from '@/application/interfaces';
 import { CreateAddress } from '@/domain/interfaces';
 
 type CreateAddressHandler = () => CreateAddress;

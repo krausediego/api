@@ -1,4 +1,5 @@
 import { Token } from '@/domain/interfaces';
+
 import { getHttpError, noContent } from '../helpers';
 import { Http, Middleware } from '../interfaces';
 

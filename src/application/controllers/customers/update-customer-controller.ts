@@ -1,6 +1,7 @@
 import { getHttpError, ok } from '@/application/helpers';
 import { UpdateCustomer } from '@/domain/interfaces';
-import { Controller, Http } from '../interfaces';
+
+import { Controller, Http } from '../../interfaces';
 
 type CreateCustomerHandler = () => UpdateCustomer;
 export class UpdateCustomerController implements Controller {

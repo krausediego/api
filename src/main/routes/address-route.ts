@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import { adaptMiddleware, adaptRoute } from '@/main/adapters';
 import {
   makeCreateAddressController,
@@ -8,6 +9,7 @@ import {
   makeUpdateAddressController,
   makeUpdateAddressValidator,
 } from '@/main/factories/application';
+
 import { authToken } from '../middlewares';
 
 export default (router: Router): void => {

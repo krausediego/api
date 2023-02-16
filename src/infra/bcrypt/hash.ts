@@ -1,9 +1,8 @@
-import { Hash } from '@/domain/interfaces';
 import bcrypt from 'bcryptjs';
 
-export class BcryptHash implements Hash {
-  constructor() {}
+import { Hash } from '@/domain/interfaces';
 
+export class BcryptHash implements Hash {
   public async createHash(key: string): Promise<string> {
     return bcrypt.hash(key, await this.generateSalt());
   }

@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     node: true,
-    es2017: true,
+    es2022: true,
     jest: true,
   },
   extends: [
@@ -9,11 +9,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 13,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier', 'import', 'import-helpers'],
@@ -22,7 +22,14 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
     'import/extensions': [
       'error',
       'ignorePackages',

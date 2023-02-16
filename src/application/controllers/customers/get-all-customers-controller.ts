@@ -1,6 +1,6 @@
+import { getHttpError, ok } from '@/application/helpers';
 import { Controller, Http } from '@/application/interfaces';
 import { GetAllCustomers } from '@/domain/interfaces/services';
-import { getHttpError, ok } from '@/application/helpers';
 
 type GetAllCustomersHandler = () => GetAllCustomers;
 export class GetAllCustomersController implements Controller {

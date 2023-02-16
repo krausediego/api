@@ -1,10 +1,9 @@
 import { IUpdateAddress } from '@/domain/interfaces';
 import { Address } from '@prisma/client';
+
 import { Prisma } from '../prisma';
 
 export class UpdateAddressRepository implements IUpdateAddress {
-  constructor() {}
-
   public async putAddress(address: Address): Promise<void> {
     const { id } = address;
     try {

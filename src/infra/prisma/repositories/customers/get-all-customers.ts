@@ -1,10 +1,9 @@
 import { IGetAllCustomers } from '@/domain/interfaces';
 import { Customer } from '@prisma/client';
-import { Prisma } from '../prisma';
+
+import { Prisma } from '../../prisma';
 
 export class GetAllCustomers implements IGetAllCustomers {
-  constructor() {}
-
   public async findAllCustomers({
     user_id,
     search,

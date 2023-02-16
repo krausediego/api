@@ -1,5 +1,7 @@
 import { Router } from 'express';
+
 import { adaptMiddleware, adaptRoute } from '@/main/adapters';
+
 import {
   makeCreateCustomerController,
   makeCreateCustomerValidator,
@@ -7,6 +9,7 @@ import {
   makeGetAllCustomersValidator,
   makeUpdateCustomerController,
   makeUpdateCustomerValidator,
+  makeGetCustomerController,
 } from '../factories/application';
 import { authToken } from '../middlewares';
 
@@ -20,9 +23,15 @@ export default (router: Router): void => {
 
   router.get(
     '/get-all-customers',
-    authToken,
+    // authToken,
     adaptMiddleware(makeGetAllCustomersValidator()),
     adaptRoute(makeGetAllCustomersController()),
+  );
+
+  router.get(
+    '/get-customer/:customer_id',
+    authToken,
+    adaptRoute(makeGetCustomerController()),
   );
 
   router.put(

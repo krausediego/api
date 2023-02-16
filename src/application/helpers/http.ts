@@ -12,7 +12,7 @@ type errorTypes =
   | ForbiddenError
   | InternalServerError;
 
-export const ok = (data: Record<string, any>): Http.Response => ({
+export const ok = (data: Record<string, any> | null): Http.Response => ({
   statusCode: 200,
   body: data,
 });

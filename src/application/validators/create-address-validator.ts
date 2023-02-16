@@ -1,16 +1,15 @@
-import { Http, Middleware } from '../interfaces';
 import * as yup from 'yup';
+
 import { getHttpError, noContent } from '../helpers';
+import { Http, Middleware } from '../interfaces';
 
 export class CreateAddressValidator implements Middleware {
   private readonly required = 'Campos obrigatórios faltando.';
 
-  constructor() {}
-
   public async handle(request: Http.Request<any>): Promise<Http.Response> {
     try {
       const schema = yup.object().shape({
-        user_id: yup.string().required(this.required),
+        user_id: yup.string().required('Campo user_id faltando'),
         address: yup.string().required(this.required),
         district: yup.string().required(this.required),
         uf: yup.string().required(this.required),

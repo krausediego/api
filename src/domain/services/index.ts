@@ -2,11 +2,7 @@ export * from './sign-up';
 export * from './sign-in';
 
 // Customers
-export * from './create-customer';
-export * from './get-all-customers';
-export * from './update-customer';
+export * from './customer';
 
 // Address
-export * from './create-address';
-export * from './get-all-address';
-export * from './update-address';
+export * from './address';

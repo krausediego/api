@@ -1,5 +1,3 @@
-import { User } from '@prisma/client';
-
 export interface SignIn {
   run(params: SignIn.Params): Promise<SignIn.Response>;
 }

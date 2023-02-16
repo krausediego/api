@@ -1,5 +1,6 @@
-import { Controller } from '@/application/interfaces';
 import { Request, Response } from 'express';
+
+import { Controller } from '@/application/interfaces';
 
 export const adaptRoute = (controller: Controller) => {
   return async (req: Request, res: Response): Promise<void> => {

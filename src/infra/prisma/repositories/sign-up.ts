@@ -1,10 +1,9 @@
 import { ISignUp } from '@/domain/interfaces';
-import { User } from '@prisma/client';
-import { Prisma as PrismaError } from '@prisma/client';
-import { Prisma } from '../prisma';
-export class SignUpRopository implements ISignUp {
-  constructor() {}
+import { User, Prisma as PrismaError } from '@prisma/client';
 
+import { Prisma } from '../prisma';
+
+export class SignUpRopository implements ISignUp {
   async createNewUser(user: Omit<User, 'id'>): Promise<void> {
     try {
       await Prisma.user.create({ data: user });

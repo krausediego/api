@@ -1,11 +1,10 @@
-import { Token as IToken } from '@/domain/interfaces';
-import { User } from '@prisma/client';
-import secret from '@/main/config/environments/token';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-export class Token implements IToken {
-  constructor() {}
+import { Token as IToken } from '@/domain/interfaces';
+import secret from '@/main/config/environments/token';
+import { User } from '@prisma/client';
 
+export class Token implements IToken {
   public generateToken(user: Omit<User, 'password'>): string {
     return jwt.sign(user, secret.secret as string, { expiresIn: '12h' });
   }

@@ -1,5 +1,6 @@
-import { Hash, IFindUser, SignIn, Token } from '@/domain/interfaces';
 import isNull from 'lodash/isNull';
+
+import { Hash, IFindUser, SignIn, Token } from '@/domain/interfaces';
 
 export class SignInService implements SignIn {
   constructor(
@@ -28,11 +29,7 @@ export class SignInService implements SignIn {
       throw new Error('Nome de usuário / Email ou senha incorretos');
     }
 
-    const token = this.token.generateToken({
-      id: user.id,
-      email: user.email,
-      username: user.username,
-    });
+    const token = this.token.generateToken(user);
 
     return { token };
   }
