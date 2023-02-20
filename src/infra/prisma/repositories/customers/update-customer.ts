@@ -1,10 +1,9 @@
 import { IUpdateCustomer } from '@/domain/interfaces';
 import { Customer } from '@prisma/client';
-import { Prisma } from '../prisma';
+
+import { Prisma } from '../../prisma';
 
 export class UpdateCustomer implements IUpdateCustomer {
-  constructor() {}
-
   public async putCustomer(customer: Customer): Promise<void> {
     const { id } = customer;
     try {

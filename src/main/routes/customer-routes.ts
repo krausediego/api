@@ -10,6 +10,7 @@ import {
   makeUpdateCustomerController,
   makeUpdateCustomerValidator,
   makeGetCustomerController,
+  makeDeleteCustomerController,
 } from '../factories/application';
 import { authToken } from '../middlewares';
 
@@ -26,6 +27,12 @@ export default (router: Router): void => {
     // authToken,
     adaptMiddleware(makeGetAllCustomersValidator()),
     adaptRoute(makeGetAllCustomersController()),
+  );
+
+  router.delete(
+    '/customer',
+    authToken,
+    adaptRoute(makeDeleteCustomerController()),
   );
 
   router.get(
