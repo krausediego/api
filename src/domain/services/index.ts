@@ -6,3 +6,6 @@ export * from './customer';
 
 // Address
 export * from './address';
+
+// Materia prima
+export * from './materia-prima';

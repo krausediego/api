@@ -8,3 +8,6 @@ export * from './customers';
 export * from './create-address-repository-factory';
 export * from './get-all-address-repository-factory';
 export * from './update-address-repository-factory';
+
+// Materia prima
+export * from './materia-prima';

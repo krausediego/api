@@ -8,3 +8,6 @@ export * from './customers';
 export * from './create-address';
 export * from './get-all-address';
 export * from './update-address';
+
+// Materia prima
+export * from './materia-prima';
