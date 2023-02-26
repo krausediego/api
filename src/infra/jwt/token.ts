@@ -6,7 +6,7 @@ import { User } from '@prisma/client';
 
 export class Token implements IToken {
   public generateToken(user: Omit<User, 'password'>): string {
-    return jwt.sign(user, secret.secret as string, { expiresIn: '12h' });
+    return jwt.sign(user, secret.secret as string, { expiresIn: '20d' });
   }
 
   public verifyToken(token: string): string | JwtPayload {
