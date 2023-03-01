@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+
+const [
+  ,
+  ,
+  packageFile,
+  removePath = 'devDependencies,dependencies',
+  ...packages
+] = process.argv;
+const pathToPackageFile = path.resolve(process.cwd(), packageFile);
+
+if (!fs.existsSync(pathToPackageFile) || !packages.length) return;
+
+const packageContent = JSON.parse(
+  fs.readFileSync(pathToPackageFile).toString(),
+);
+
+removePath
+  .split(',')
+  .map(str => str.trim())
+  .forEach(key => {
+    const keyPackages = packageContent[key];
+    const entries = Object.entries(keyPackages);
+
+    for (const [packageName] of entries) {
+      if (!packages.includes(packageName)) {
+        delete keyPackages[packageName];
+      }
+    }
+
+    packageContent[key] = keyPackages;
+  });
+
+fs.writeFileSync(
+  `${pathToPackageFile}`,
+  JSON.stringify(packageContent, null, 2),
+);

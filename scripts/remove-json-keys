@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+
+const packageFile = process.argv[2];
+const packagePath = path.resolve(process.cwd(), packageFile);
+const propKey = process.argv[3];
+
+if (!packageFile || !propKey || !fs.existsSync(packagePath)) return;
+
+const packageContent = JSON.parse(fs.readFileSync(packagePath).toString());
+
+if (typeof packageContent[propKey] !== 'undefined') {
+  delete packageContent[propKey];
+  fs.writeFileSync(packagePath, JSON.stringify(packageContent, null, 2));
+}

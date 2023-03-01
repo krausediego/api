@@ -1,0 +1,6 @@
+apps:
+  - name: API
+    script: /app/main/server.js
+    cwd: /app
+    env:
+      PROCESS_NAME: http-server
