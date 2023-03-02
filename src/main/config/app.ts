@@ -18,7 +18,7 @@ export class App {
 
   setupEnvironment(): App {
     this.app.use(express.json());
-    this.app.use(express.static(path.join(__dirname, 'public')));
+    this.app.use(express.static(path.join(__dirname, 'dist')));
     this.app.use(cors());
     return this;
   }
