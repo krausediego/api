@@ -1,4 +1,4 @@
-// import '@/main/config/dotenv';
+import '@/main/config/dotenv';
 import env from '@/main/config/environments/application';
 
 Promise.all([]).then(async () => {

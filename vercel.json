@@ -4,13 +4,13 @@
   "builds": [
     {
       "src": "dist/main/server.ts",
-      "use": "@vercel/node"
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/dist/main/server.ts"
+      "src": "/",
+      "dest": "dist/main/server.ts"
     }
   ]
 }

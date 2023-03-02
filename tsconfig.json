@@ -16,7 +16,6 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@/tests/*": ["../tests/*"]
     },
     "typeRoots": [
       "./node_modules/@types",
