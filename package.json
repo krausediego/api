@@ -5,6 +5,7 @@
   "description": "",
   "scripts": {
     "dev": "PROCESS_NAME=http-server tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
+    "start": "node dist/main/server.js",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "generate": "npx prisma generate",
@@ -12,7 +13,7 @@
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test --findRelatedTests",
     "build": "yarn build:app",
-    "build:app": "npx webpack"
+    "build:app": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "engines": {
     "node": ">=16"
