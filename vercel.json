@@ -4,7 +4,7 @@
   "builds": [
     {
       "src": "dist/main/server.ts",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
