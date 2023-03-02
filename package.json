@@ -14,7 +14,7 @@
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test --findRelatedTests",
     "build": "yarn build:app",
-    "build:app": "rimraf dist && tsc"
+    "build:app": "tsc && tsc-alias"
   },
   "engines": {
     "node": ">=16"
