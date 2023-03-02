@@ -4,9 +4,7 @@
   "main": "dist/main/server.js",
   "description": "",
   "scripts": {
-    "dev:http": "PROCESS_NAME=http-server tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
-    "dev:worker": "PROCESS_NAME=worker tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/worker.ts",
-    "dev:docs": "redoc-cli serve docs/api.yml --watch --options.noAutoAuth --options.hideDownloadButton",
+    "dev": "PROCESS_NAME=http-server tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "generate": "npx prisma generate",
