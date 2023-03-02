@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "nodejs-postgres",
-  "builds": [{ "src": "/src", "use": "@vercel/node" }],
-  "routes": [{ "src": "/.src", "dest": "/src/main/server.ts" }],
+  "builds": [{ "src": "/src/main/server.ts", "use": "@vercel/node" }],
+  "routes": [{ "src": "/.src", "dest": "/src/main/server.js" }],
   "outputDirectory": "dist"
 }
