@@ -5,15 +5,15 @@
   "description": "",
   "scripts": {
     "dev": "PROCESS_NAME=http-server tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
-    "start": "node dist/main/server.js",
+    "start": "node ./dist/main/server.js",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "generate": "npx prisma generate",
     "prepush": "yarn test",
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test --findRelatedTests",
-    "build": "yarn && yarn build:app",
-    "build:app": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
+    "build": "yarn build:app",
+    "build:app": "tsc && tsc-alias"
   },
   "engines": {
     "node": ">=16"
