@@ -12,7 +12,7 @@
     "prepush": "yarn test",
     "test:coverage": "yarn test --coverage",
     "test:ci": "yarn test --findRelatedTests",
-    "build": "yarn build:app",
+    "build": "yarn && yarn build:app",
     "build:app": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json"
   },
   "engines": {
