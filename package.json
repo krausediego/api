@@ -4,7 +4,7 @@
   "main": "dist/main/server.js",
   "description": "",
   "scripts": {
-    "dev": "PROCESS_NAME=http-server tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
+    "dev": "tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --no-notify --respawn src/main/server.ts",
     "start": "node ./dist/main/server.js",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
